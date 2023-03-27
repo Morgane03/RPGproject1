@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9b926526a250f0c4fbd14fd9d0b3f6f5,
         type: 3}
       propertyPath: m_Name
-      value: Avatar
+      value: Avatar Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b926526a250f0c4fbd14fd9d0b3f6f5, type: 3}

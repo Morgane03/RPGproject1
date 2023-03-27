@@ -93,6 +93,7 @@ namespace StarterAssets
         public float attackDammage;
         public float attackSpeed;
         public float attackRange;
+        public float expirience;
 
         private List<Transform> ennemiInRange = new List<Transform>();
 
@@ -310,6 +311,7 @@ namespace StarterAssets
 
         private void GetEnnemiInRange()
         {
+           ennemiInRange.Clear();
            foreach(Collider c in Physics.OverlapSphere((transform.position + transform.forward * 0.5f), 0.5f))
             {
                 if(c.gameObject.CompareTag("Ennemi"))
@@ -427,6 +429,11 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+
+        public void GetExperience(float exp)
+        {
+            expirience += exp;
         }
     }
 }
