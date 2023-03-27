@@ -1,4 +1,6 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -87,7 +89,12 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
-        
+        public bool canAttack = true;
+        public float attackDammage;
+        public float attackSpeed;
+        public float attackRange;
+
+        private List<Transform> ennemiInRange = new List<Transform>();
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -162,6 +169,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Attack();
         }
 
         private void LateUpdate()
@@ -282,12 +290,32 @@ namespace StarterAssets
             }
         }
 
-        private void Attaque()
+        private void Attack()
         {
-            if(Input.GetMouseButtonDown(0))
+            StartCoroutine(AttackRoutine());
+        }
+
+        IEnumerator AttackRoutine()
+        {
+            GetEnnemiInRange();
+            foreach(Transform ennemi in ennemiInRange)
             {
-                print ("Attaking");
-                
+                EnnemyController ec = ennemi.GetComponent<EnnemyController>();
+                if (ec == null) continue;
+                ec.GetHit(attackDammage);
+            }
+
+            yield return null;
+        }
+
+        private void GetEnnemiInRange()
+        {
+           foreach(Collider c in Physics.OverlapSphere((transform.position + transform.forward * 0.5f), 0.5f))
+            {
+                if(c.gameObject.CompareTag("Ennemi"))
+                {
+                    ennemiInRange.Add(c.transform);
+                }
             }
         }
 
