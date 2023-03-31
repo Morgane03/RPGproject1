@@ -14,18 +14,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f53763d527107f743b1275f9f6856c2f,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f53763d527107f743b1275f9f6856c2f,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -227.43626
+      value: -191.80658
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f53763d527107f743b1275f9f6856c2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5897589
+      value: 2.8919716
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f53763d527107f743b1275f9f6856c2f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -224.94438
+      value: -215.48401
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f53763d527107f743b1275f9f6856c2f,
         type: 3}
@@ -65,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f53763d527107f743b1275f9f6856c2f,
         type: 3}
       propertyPath: m_Name
-      value: pink tree
+      value: pink tree Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f53763d527107f743b1275f9f6856c2f, type: 3}

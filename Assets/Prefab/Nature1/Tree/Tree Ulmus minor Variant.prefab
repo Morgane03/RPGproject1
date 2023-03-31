@@ -25,22 +25,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 99728cea131542c44bb07390ee642202,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99728cea131542c44bb07390ee642202,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -234.02
+      value: -187.07304
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99728cea131542c44bb07390ee642202,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 2.7191563
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99728cea131542c44bb07390ee642202,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -219.12
+      value: -214.55914
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99728cea131542c44bb07390ee642202,
         type: 3}
@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 99728cea131542c44bb07390ee642202,
         type: 3}
       propertyPath: m_Name
-      value: Tree Ulmus minor Variant (1)
+      value: Tree Ulmus minor Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99728cea131542c44bb07390ee642202, type: 3}
