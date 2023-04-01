@@ -89,6 +89,7 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        public bool attacking;
         public bool canAttack = true;
         public float attackDammage;
         public float attackSpeed;
@@ -293,11 +294,16 @@ namespace StarterAssets
 
         private void Attack()
         {
-            StartCoroutine(AttackRoutine());
+            if(_input.attaque)
+            {
+                StartCoroutine(AttackRoutine());
+            }
         }
 
         IEnumerator AttackRoutine()
         {
+            attacking = true;
+            yield return new WaitForSeconds(0.1f);
             GetEnnemiInRange();
             foreach(Transform ennemi in ennemiInRange)
             {
@@ -305,8 +311,7 @@ namespace StarterAssets
                 if (ec == null) continue;
                 ec.GetHit(attackDammage);
             }
-
-            yield return null;
+            yield return new WaitForSeconds(0.65f);
         }
 
         private void GetEnnemiInRange()
@@ -319,6 +324,11 @@ namespace StarterAssets
                     ennemiInRange.Add(c.transform);
                 }
             }
+        }
+
+        public void GetExperience(float exp)
+        {
+            expirience += exp;
         }
 
         private void JumpAndGravity()
@@ -431,9 +441,5 @@ namespace StarterAssets
             }
         }
 
-        public void GetExperience(float exp)
-        {
-            expirience += exp;
-        }
     }
 }
