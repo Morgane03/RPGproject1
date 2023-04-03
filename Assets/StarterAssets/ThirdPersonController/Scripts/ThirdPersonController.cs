@@ -98,6 +98,7 @@ namespace StarterAssets
 
         private List<Transform> ennemiInRange = new List<Transform>();
 
+
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
@@ -298,6 +299,7 @@ namespace StarterAssets
             {
                 StartCoroutine(AttackRoutine());
             }
+            StopCoroutine(AttackRoutine());
         }
 
         IEnumerator AttackRoutine()

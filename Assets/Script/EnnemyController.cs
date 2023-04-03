@@ -29,21 +29,30 @@ public class EnnemyController : MonoBehaviour
         if (currentHealth < 0)
         {
             Die();
+            return;
         }
+        StartCoroutine(RecoverFromHit());
     }
     void Die()
     {
         dead = true;
+        // animation mort
         DropLoop();
         foreach(ThirdPersonController pc in players)
         {
             pc.GetExperience(expGarented);
         }
-        GameObject.Destroy(this.gameObject);
+        GameObject.Destroy(this.gameObject, 5);
     }
 
     void DropLoop()
     {
         print("You get the bounty");
+    }
+
+    IEnumerator RecoverFromHit()
+    {
+        yield return new WaitForSeconds(0.1f);
+        // animation degat
     }
 }
