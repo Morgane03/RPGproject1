@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
@@ -89,12 +90,16 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
+        private int level = 1;
+        private Text levelText;
+        public float expirience { get; private set; }
+        private Transform experienceBar;
+
         public bool attacking;
         public bool canAttack = true;
         public float attackDammage;
         public float attackSpeed;
         public float attackRange;
-        public float expirience;
 
         private List<Transform> ennemiInRange = new List<Transform>();
 
